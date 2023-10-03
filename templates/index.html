@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block body %}
+<form action="#" method="post">
+    <label for="text">What you want ?</label>
+    <input type="text" name="text" id="text" style="width: 200px;">
+    <input type="submit" value="Generate Content">
+</form>
+
+{%if content%}
+<p>{{content}}</p>
+{% else %}
+<p>Write what you want above to display result</p>
+{% endif %}
+
+<h1>Entities</h1>
+{% if entities%}
+{% for entity in entities %}
+<h4>{{entity.text}} <span> >>>> {{entity.label_}}</span></h4>
+
+{% endfor %}
+{% endif %}
+{% endblock %}
